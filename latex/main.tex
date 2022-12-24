@@ -1,0 +1,117 @@
+\documentclass[letterpaper, 11pt]{article}
+\input{macros.sty}
+
+% This displays the page borders and margins and stuff
+% \usepackage[pass,showframe]{geometry}
+
+
+%-------------------------------------------
+%%%%%%    CV STARTS HERE    %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\noindent\begin{minipage}{0.7\textwidth}
+    \textbf{\href{https://github.com/darinchau}{\Large{\myname}}} \\ 
+    \email \hspace{3pt} \myemail \\
+    \github \hspace{3pt} \mygithub \\
+    \phone : \mymobile \\
+    \linkedin \hspace{3pt} \mylinkedin \\
+    Hi! I am Darin. I am a mathematics and computer science undergraduate student from HKUST. I have conducted research in mathematics and computer science for the past two years. I can also do python and Javascript programming. In my free time I love to play classical music on the piano.
+\end{minipage}
+
+\hfill
+
+\begin{minipage}{0.2\textwidth}
+    \includegraphics[width=\linewidth]{images/Profile pic square.jpg}
+\end{minipage}
+
+
+%-----------EDUCATION-----------------
+\section{Education}
+\resumeSubHeadingListStart
+    \resumeSubheading
+        {Hong Kong University of Science and Technology}{Hong Kong}
+        {BSc in Mathematics and Computer Science;    GPA: 3.84}{Sep 2020 - Present}
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------------
+\section{Selected Course Work}
+\resumeSubHeadingListStart
+    \resumeSubItem{COMP2211}{Exploring AI (Grade: A+)}
+    \resumeSubItem{MATH2431}{Honors Probability (Grade: A)}
+    \resumeSubItem{MATH4141}{Number Theory and Applications (Grade: A)}
+    \resumeSubItem{MATH5111}{Advanced Algebra I (Grade: A)}
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+\resumeSubHeadingListStart
+    \resumeSubheading
+        {Math Research}{Hong Kong}
+        {Supervisor: Prof. Ivan Ip}{Sep 2022 - Dec 2022}
+        \resumeItemListStart
+            \resumeItem{Cluster algebra}
+                {(Algebraic Geometry/Algebraic Combinatorics - Math) We investigated the positivity theorem of cluster algebras and the combinatorial tools developed by Gross et. al. for the proof.}
+            \resumeItem{TikzPaint}
+                {We developed TikzPaint, a Python Library for generating tikz code and animations, to demonstrate high-dimensional plots and figures in the research}
+        \resumeItemListEnd
+
+    \resumeSubheading
+        {Computer Science Research}{Hong Kong}
+        {Supervisor: Prof. Gary Chan Sheung-Han}{Jun 2022 - Aug 2022}
+        \resumeItemListStart
+            \resumeItem{PHNet}
+                {We investigated the Parasite-Host CNN model developed by Meng et. al. for video crowd counting. We developed a synthetic dataset and suggested modified model structures.}
+            \resumeItem{Unity Dataset}
+                {We developed a synthetic dataset consisting of videos of a crowd in Unity3D. This provides a 4k dataset for crowd counting research.}
+        \resumeItemListEnd
+
+    % \resumeSubheading
+    %     {Math Research}{Hong Kong}
+    %     {Supervisor: Prof. Ivan Ip}{Feb 2022 - May 2022}
+    %     \resumeItemListStart
+    %         \resumeItem{Cluster algebra}
+    %             {(Algebraic Geometry/Algebraic Combinatorics - Math) We investigated the cluster algebraic structure over tensor invariant rings. We developed a theorem about the classification for the case \(n = 9\) and made conjectures about the underlying graph structure of the mutation graphs of the cluster algebras.}
+    %     \resumeItemListEnd
+
+    \resumeSubheading
+        {Youthniverse}{Hong Kong}
+        {Software Developer}{Aug 2020 - Feb 2021}
+        \resumeItemListStart
+            \resumeItem{Duties}
+                {Developed a profile matching mobile application for a startup non-profit organization using React Native.}
+            \resumeItem{AI profile matching}
+                {Developed the AI-powered algorithm for profile matching using regression techniques and clustering.}
+        \resumeItemListEnd
+
+    \resumeSubheading
+        {Music is the Key}{Hong Kong}
+        {Software Developer}{Aug 2021 - Aug 2022}
+        \resumeItemListStart
+            \resumeItem{Duties}
+                {To develop softwares and chat bots to enhance online user experience in an international organization focusing on music education and networking.}
+        \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------------
+\section{Projects}
+\resumeSubHeadingListStart
+    \resumeSubItem{TikzPaint}
+        {Open source python library for generating high-dimensional mathematical figures.}
+\resumeSubHeadingListEnd
+
+%
+%--------PROGRAMMING SKILLS------------
+\section{Programming Skills}
+\resumeSubHeadingListStart
+    \resumeSubItem{Languages}{Python, Javascript, C++, C\#, Rust}
+    \resumeSubItem{Tools (Machine Learning)}{PyTorch, Numpy, Keras, TensorFlow, Pandas, MatPlotLib}
+    \resumeSubItem{Tools (App development)}{React, Angular, Firebase, Unity3D}
+\resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}
