@@ -9,7 +9,7 @@
 from MDgen import Image, ReadMe, Tagged, Point, Hyperlink
 from MDgen.profile import dev
 
-linkedin = Image("https://linkedin.com/in/darinchauyf", "https://raw.githubusercontent.com/darinchau/darinchau/main/icons/linkedin.svg", "LinkedIn")
+linkedin = Image("https://linkedin.com/in/darinchauyf", "https://raw.githubusercontent.com/darinchau/darinchau/c2e538bb063a2b8077212ada96dead8d42fd3866/icons/linked%20in.svg", "LinkedIn")
 instagram = Image("https://www.instagram.com/dc.darin/", "https://raw.githubusercontent.com/darinchau/darinchau/main/icons/instagram.svg", "Instagram @dc.darin")
 leetcode = Image("https://leetcode.com/darinchau/", "https://raw.githubusercontent.com/darinchau/darinchau/main/icons/leetcode.svg", "LeetCode")
 
