@@ -23,16 +23,6 @@ def generate():
     with open('./github.privatekey', 'r') as f:
         token = f.read() 
         user = GitUser(token)
-    with open(piepath, 'w') as f:
-        f.write(f"""\
-<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-<foreignObject width="100" height="100">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-        {GitPieChart(user, use_columns=True).content}
-    </div>
-</foreignObject>
-</svg>
-""")
     
     readme = ReadMe().add(
         Tagged("Hi, I'm Darin Chau", H1, CENTER),
@@ -75,10 +65,8 @@ def generate():
             dev.vue
         ),
         ReadMe(),
-        ReadMe("### My Github stats:").add(
-            Hyperlink("Github stats:", "https://github.com/darinchau/markdown-generator")
-        ),
-        Image("https://github.com/darinchau/markdown-generator", piepath, "Github stats"),
+        ReadMe("### My Github stats:"),
+        GitPieChart(user, 150, skip_entries=["ShaderLab", "HLSL", "Mathematica", "Batchfile", "Ruby"]).exportAsSVG(piepath, "https://github.com/darinchau/markdown-generator"),
         ReadMe("Last updated: ").add(
             CurrentDate()
         ),

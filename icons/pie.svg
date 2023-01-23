@@ -1,48 +1,28 @@
-<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-<foreignObject width="100" height="100">
+<svg width="550" height="315" xmlns="http://www.w3.org/2000/svg">
+<svg x="0" y="82.5" height="150" width="150">
+	<path d="M75,75 L75.0,0.0 A75,75,0,0,1,149.97191077821446,77.05246053882898 Z" fill="#178600"></path>
+	<path d="M75,75 L144.86548123148313,47.72703660594843 A75,75,0,0,1,100.3508004664324,145.5856707534265 Z" fill="#178600"></path>
+	<path d="M75,75 L125.81169899024098,130.16494580551262 A75,75,0,0,1,18.46519463860995,124.28301718391177 Z" fill="#178600"></path>
+	<path d="M75,75 L18.712315381396024,124.56507399648036 A75,75,0,0,1,0.20616085030867737,69.44287617106644 Z" fill="#3D6117"></path>
+	<path d="M75,75 L0.1793102679788916,69.81691327251501 A75,75,0,0,1,21.326930111274287,22.614872638124034 Z" fill="#3572A5"></path>
+	<path d="M75,75 L21.065676477796252,22.88389168210793 A75,75,0,0,1,27.517449809792524,16.944789833862217 Z" fill="#f1e05a"></path>
+	<path d="M75,75 L27.227768499084732,17.182927284209903 A75,75,0,0,1,28.936829965393777,15.812295479863764 Z" fill="#f34b7d"></path>
+	<path d="M75,75 L28.641468464294604,16.043350215153772 A75,75,0,0,1,29.78632928820729,15.160849097220819 Z" fill="#dea584"></path>
+	<path d="M75,75 L29.487699950047286,15.387664496657457 A75,75,0,0,1,29.864868085697168,15.101587107182198 Z" fill="#e34c26"></path>
+	<path d="M75,75 L29.565941457088663,15.32801055504094 A75,75,0,0,1,29.61461099380734,15.290985062918963 Z" fill="#563d7c"></path>
+	<path d="M75,75 L29.316634479238857,15.518657423553961 A75,75,0,0,1,75.0,0.0 Z" fill="#DEDEDE"></path>
+</svg>
+<foreignObject x="180" y="0" width="400" height="315">
     <div xmlns="http://www.w3.org/1999/xhtml">
-        <table style="height: 18px; width: 420px; border-collapse: collapse; border-style: hidden;" border="1">
-        <tbody>
-        <tr style="height: 18px;">
-            <td style="width: 100px; height: 18px;">
-        <div id="shape">
-            <svg height="150" width="150">
-                <path d="M75.0,75.0 L75.0,0.0 A75.0,75.0,0,0,1,149.97162929433398,77.06271688628402 Z" fill="#178600"></path>
-                <path d="M75.0,75.0 L144.86827912688216,47.73420509414621 A75.0,75.0,0,0,1,100.33390118568515,145.59173783605232 Z" fill="#178600"></path>
-                <path d="M75.0,75.0 L125.80037784262704,130.17537141738447 A75.0,75.0,0,0,1,18.448342809507537,124.2636790039987 Z" fill="#178600"></path>
-                <path d="M75.0,75.0 L18.69536707244434,124.54582031708846 A75.0,75.0,0,0,1,0.20844643037125365,69.41219948089113 Z" fill="#3D6117"></path>
-                <path d="M75.0,75.0 L0.18144243665999227,69.78622553794483 A75.0,75.0,0,0,1,21.32339877245402,22.618491042553877 Z" fill="#3572A5"></path>
-                <path d="M75.0,75.0 L21.06216327506438,22.887527697928334 A75.0,75.0,0,0,1,56.49524571578455,2.318681431327832 Z" fill="#222c37"></path>
-                <path d="M75.0,75.0 L56.132071946080096,2.4121133318230363 A75.0,75.0,0,0,1,64.73440865247487,0.705870795293535 Z" fill="#f1e05a"></path>
-                <path d="M75.0,75.0 L64.36306787386829,0.7581272128452667 A75.0,75.0,0,0,1,67.6956230947892,0.35654028632767165 Z" fill="#dd1100"></path>
-                <path d="M75.0,75.0 L67.32249865581208,0.39399505998197526 A75.0,75.0,0,0,1,69.50500117709726,0.20157095275129677 Z" fill="#f34b7d"></path>
-                <path d="M75.0,75.0 L69.13107927750185,0.22998081080203292 A75.0,75.0,0,0,1,70.57330871748627,0.13075127738146364 Z" fill="#dea584"></path>
-                <path d="M75.0,75.0 L70.199019367173,0.1538205052307262 A75.0,75.0,0,0,1,71.34692157781902,0.0890193760527751 Z" fill="#aace60"></path>
-                <path d="M75.0,75.0 L70.97241389872792,0.10822107736497344 A75.0,75.0,0,0,1,71.44523704517935,0.08428962937723838 Z" fill="#e34c26"></path>
-                <path d="M75.0,75.0 L71.07070448851262,0.10299981452257612 A75.0,75.0,0,0,1,71.18116098479064,0.09728664076371274 Z" fill="#701516"></path>
-                <path d="M75.0,75.0 L70.80669671385395,0.11731703824710848 A75.0,75.0,0,0,1,70.86776003103347,0.11392257008733964 Z" fill="#563d7c"></path>
-                <path d="M75.0,75.0 L70.49338285690058,0.13551975786165826 A75.0,75.0,0,0,1,75.0,0.0 Z" fill="#C1F12E"></path>
-            </svg>
-        </div>
-            </td>
-            <td style="width: 320px; height: 18px;">
-            <p><span style="background-color: #178600;">&nbsp; &nbsp;</span> C#: 63.59%</p>
-            <p><span style="background-color: #3D6117;">&nbsp; &nbsp;</span> TeX: 12.67%</p>
-            <p><span style="background-color: #3572A5;">&nbsp; &nbsp;</span> Python: 11.2%</p>
-            <p><span style="background-color: #222c37;">&nbsp; &nbsp;</span> ShaderLab: 8.81%</p>
-            <p><span style="background-color: #f1e05a;">&nbsp; &nbsp;</span> JavaScript: 1.86%</p>
-            <p><span style="background-color: #dd1100;">&nbsp; &nbsp;</span> Mathematica: 0.71%</p>
-            <p><span style="background-color: #f34b7d;">&nbsp; &nbsp;</span> C++: 0.46%</p>
-            <p><span style="background-color: #dea584;">&nbsp; &nbsp;</span> Rust: 0.31%</p>
-            <p><span style="background-color: #aace60;">&nbsp; &nbsp;</span> HLSL: 0.24%</p>
-            <p><span style="background-color: #e34c26;">&nbsp; &nbsp;</span> HTML: 0.1%</p>
-            <p><span style="background-color: #701516;">&nbsp; &nbsp;</span> Ruby: 0.02%</p>
-            <p><span style="background-color: #563d7c;">&nbsp; &nbsp;</span> CSS: 0.01%</p>
-            <p><span style="background-color: #C1F12E;">&nbsp; &nbsp;</span> Batchfile: 0.0%</p>
-            </td>
-        </tr>
-        </tbody>
-        </table>
+		<p><span style="background-color: #178600; color: #ffffff">C#</span>: 63.59%</p>
+		<p><span style="background-color: #3D6117; color: #ffffff">TeX</span>: 12.67%</p>
+		<p><span style="background-color: #3572A5; color: #ffffff">Python</span>: 11.21%</p>
+		<p><span style="background-color: #f1e05a; color: #000000">JavaScript</span>: 1.86%</p>
+		<p><span style="background-color: #f34b7d; color: #ffffff">C++</span>: 0.46%</p>
+		<p><span style="background-color: #dea584; color: #000000">Rust</span>: 0.31%</p>
+		<p><span style="background-color: #e34c26; color: #ffffff">HTML</span>: 0.1%</p>
+		<p><span style="background-color: #563d7c; color: #ffffff">CSS</span>: 0.01%</p>
+		<p><span style="background-color: #DEDEDE; color: #000000">Others</span>: 9.79%</p>
     </div>
 </foreignObject>
 </svg>
