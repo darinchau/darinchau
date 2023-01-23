@@ -19,9 +19,21 @@ H3 = "h3"
 LEFT = 'aligh="left"'
 
 def generate():
-    # with open('./github.privatekey', 'r') as f:
-    #     token = f.read() 
-    #     user = GitUser(token)
+    piepath = './icons/pie.svg'
+    with open('./github.privatekey', 'r') as f:
+        token = f.read() 
+        user = GitUser(token)
+    with open(piepath, 'w') as f:
+        f.write(f"""\
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+<foreignObject width="100" height="100">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+        {GitPieChart(user, use_columns=True).content}
+    </div>
+</foreignObject>
+</svg>
+""")
+    
     readme = ReadMe().add(
         Tagged("Hi, I'm Darin Chau", H1, CENTER),
         Tagged("Undergraduate software developer from HKUST", H3, CENTER),
@@ -53,7 +65,6 @@ def generate():
             dev.opencv,
             dev.pandas,
             dev.python,
-            dev.python,
             dev.react,
             dev.reactnative,
             dev.rust,
@@ -63,14 +74,14 @@ def generate():
             dev.unity,
             dev.vue
         ),
-        # ReadMe(),
-        # ReadMe("### My ").add(
-        #     Hyperlink("Github stats:", "https://github.com/darinchau/markdown-generator")
-        # ),
-        # GitPieChart(user),
-        # ReadMe("Last updated: ").add(
-        #     CurrentDate()
-        # ),
+        ReadMe(),
+        ReadMe("### My Github stats:").add(
+            Hyperlink("Github stats:", "https://github.com/darinchau/markdown-generator")
+        ),
+        Image("https://github.com/darinchau/markdown-generator", piepath, "Github stats"),
+        ReadMe("Last updated: ").add(
+            CurrentDate()
+        ),
         newline = True
     )
     
