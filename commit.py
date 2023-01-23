@@ -19,9 +19,9 @@ H3 = "h3"
 LEFT = 'aligh="left"'
 
 def generate():
-    with open('./github.privatekey', 'r') as f:
-        token = f.read() 
-        user = GitUser(token)
+    # with open('./github.privatekey', 'r') as f:
+    #     token = f.read() 
+    #     user = GitUser(token)
     readme = ReadMe().add(
         Tagged("Hi, I'm Darin Chau", H1, CENTER),
         Tagged("Undergraduate software developer from HKUST", H3, CENTER),
