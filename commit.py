@@ -6,8 +6,8 @@
 
 ## This uses the markdown generator library on https://github.com/darinchau/markdown-generator
 
-from MDgen import Image, ReadMe, Tagged, Point, Hyperlink
-from MDgen.profile import dev
+from MDgen import Image, ReadMe, Tagged, Point, Hyperlink, CurrentDate
+from MDgen.profile import dev, GitPieChart, GitUser
 
 linkedin = Image("https://linkedin.com/in/darinchauyf", "https://raw.githubusercontent.com/darinchau/darinchau/c2e538bb063a2b8077212ada96dead8d42fd3866/icons/linked%20in.svg", "LinkedIn")
 instagram = Image("https://www.instagram.com/dc.darin/", "https://raw.githubusercontent.com/darinchau/darinchau/main/icons/instagram.svg", "Instagram @dc.darin")
@@ -19,6 +19,9 @@ H3 = "h3"
 LEFT = 'aligh="left"'
 
 def generate():
+    with open('./github.privatekey', 'r') as f:
+        token = f.read() 
+        user = GitUser(token)
     readme = ReadMe().add(
         Tagged("Hi, I'm Darin Chau", H1, CENTER),
         Tagged("Undergraduate software developer from HKUST", H3, CENTER),
@@ -59,6 +62,14 @@ def generate():
             dev.typescript,
             dev.unity,
             dev.vue
+        ),
+        ReadMe(),
+        ReadMe("### My ").add(
+            Hyperlink("Github stats", "https://github.com/darinchau/markdown-generator")
+        ),
+        GitPieChart(user),
+        ReadMe("Last updated: ").add(
+            CurrentDate()
         ),
         newline = True
     )
