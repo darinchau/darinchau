@@ -63,14 +63,14 @@ def generate():
             dev.unity,
             dev.vue
         ),
-        ReadMe(),
-        ReadMe("### My ").add(
-            Hyperlink("Github stats:", "https://github.com/darinchau/markdown-generator")
-        ),
-        GitPieChart(user),
-        ReadMe("Last updated: ").add(
-            CurrentDate()
-        ),
+        # ReadMe(),
+        # ReadMe("### My ").add(
+        #     Hyperlink("Github stats:", "https://github.com/darinchau/markdown-generator")
+        # ),
+        # GitPieChart(user),
+        # ReadMe("Last updated: ").add(
+        #     CurrentDate()
+        # ),
         newline = True
     )
     
