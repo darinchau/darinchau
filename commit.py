@@ -65,7 +65,7 @@ def generate():
         ),
         ReadMe(),
         ReadMe("### My ").add(
-            Hyperlink("Github stats", "https://github.com/darinchau/markdown-generator")
+            Hyperlink("Github stats:", "https://github.com/darinchau/markdown-generator")
         ),
         GitPieChart(user),
         ReadMe("Last updated: ").add(
