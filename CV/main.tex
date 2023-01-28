@@ -1,0 +1,202 @@
+\documentclass[letterpaper, 11pt]{article}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage[left=0.7in, right=0.8in, bottom=.8in, top=0.8in, headsep=0in, footskip=.2in]{geometry}
+\renewcommand{\baselinestretch}{1.2}
+\usepackage[dvipsnames]{xcolor}
+% \hypersetup{colorlinks=true, linkcolor=MidnightBlue, urlcolor=MidnightBlue}
+\usepackage{libertine}
+\usepackage[libertine]{newtxmath}
+\pagenumbering{gobble}
+\newcommand{\headingfont}{\Large\color{OliveGreen}}
+\newcolumntype{R}{>{\raggedleft}p{1in}}
+
+
+\newenvironment{SectionTable}[1]{
+	\renewcommand*{\arraystretch}{1.7}
+	\setlength{\tabcolsep}{10pt}
+	\begin{longtable}{Rp{5.2in}} & #1 \\}
+{\end{longtable}\vspace{-.3cm}}
+
+
+
+\newenvironment{SectionTableSingleSpace}[1]{
+	\renewcommand*{\arraystretch}{1.2}
+	\setlength{\tabcolsep}{10pt}
+	\begin{longtable}{Rp{5.2in}} & #1 \\[0.6em]}
+{\end{longtable}\vspace{-.3cm}}
+
+\begin{document}
+
+
+\begin{SectionTable}{\Huge CHAU, Yu Foon Darin} & 
+yfdchau@connect.ust.hk   $\;\boldsymbol{\cdot}\;$ 
++852 5661 8566 \newline
+Citizenship: Hong Kong
+\end{SectionTable}
+
+\begin{SectionTable}{\headingfont About me}
+&
+Hi! I am Darin. I am a mathematics and computer science undergraduate student from HKUST. I am a motivated computer science and mathematics student with experience in research, Unity, and programming languages such as Python, C++, Rust. In my free time I love to play classical music on the piano.
+\end{SectionTable}
+
+\begin{SectionTable}{\headingfont Education}
+2020 -- Present & 
+\textbf{Hong Kong University of Science and Technology} -- Hong Kong \newline
+BSc in Mathematics (IRE) + Computer Science (COSC) \newline 
+\textit{Cumulative GPA: 3.813} \newline
+\textit{Major Cumulative GPA: 3.862}\\
+2023 -- Present & 
+\textbf{University of California, Irvine} -- Irvine, CA \newline
+BSc in Mathematics (Exchange) \newline 
+\\
+& \textbf{Selected coursework}
+\begin{itemize}[itemsep=0pt, leftmargin=*]
+\item MATH5111 Advanced Algebra I (Grade: A)
+\item MATH2043, MATH3043 Honors Real Analysis I, II (Grade: A, A)
+\item MATH4985A Commutative Algebra (Grade: A+)
+\item MATH4141 Number Theory and Applications (Grade: A)
+\end{itemize}
+\end{SectionTable}
+
+\begin{SectionTableSingleSpace}{\headingfont Honors and scholarships}
+Spring 2022 & 
+S.S. Chern Scholarship : Hong Kong University of Science and Technology (Math Department) 
+\\
+Spring 2022 & 
+Dean's List : Hong Kong University of Science and Technology
+\\
+Fall 2021 & 
+Dean's List : Hong Kong University of Science and Technology
+\\
+Spring 2021 & 
+S.S. Chern Scholarship : Hong Kong University of Science and Technology (Math Department) 
+\\
+% \newline
+% \textit{Lorem Ipsum, Dolor Sit Amet}. \\
+Fall 2020 & 
+Dean's List : Hong Kong University of Science and Technology
+\end{SectionTableSingleSpace}
+
+\begin{SectionTable}{\headingfont Industry experience}
+Aug 2020 - Feb 2021 &
+\textbf{Software Developer} (Youthniverse) \newline
+Developed a profile matching mobile application for a startup non-profit organization using React Native. Utilized various React Native components to create a user-friendly interface. Incorporated the AI matching algorithm for profile matching using regression techniques to connect users with similar interests and goals.
+\\
+Aug 2021 - Aug 2022 &
+\textbf{Software Developer} (Music is the Key) \newline
+Developed chatbot utilizing natural language processing \& machine learning algorithms to decipher music preferences, delivering personalized content and grew the community by 5 times. Optimized \& automated functionality of the chatbot by creating APIs for scalability, resulting in response time reduced by 15\%.
+\end{SectionTable}
+
+\begin{SectionTable}{\headingfont Development languages and tools}
+Languages & Python, Javascript, C++, C\#, Rust
+\\
+Tools for ML & PyTorch, Numpy, Keras, TensorFlow, Pandas, MatPlotLib, OpenCV
+\\
+Other tools & React, Angular, Vue, Firebase, Unity3D, HTML, CSS, Yew, Microsoft Excel, Powerpoint
+\end{SectionTable}
+
+\begin{SectionTable}{\headingfont Research experience}
+Sep 2022 - Dec 2022 &
+\textbf{Cluster algebra} (Algebraic Geometry/Algebraic Combinatorics - Math) \newline
+Supervised by Prof. Ivan Ip. This research project investigates the positivity theorem of cluster algebras and the combinatorial tools developed by Gross et. al. for the proof.
+\\ 
+Jun 2022 - Aug 2022 &
+\textbf{Crowd Counting using CNN} (Machine Learning - CS) \newline
+Supervised by Prof. Gary Chan Sheung-Han. This research project investigates the Parasite-Host CNN model developed by Meng et. al. for video crowd counting. We developed a synthetic dataset to test the model with datasets of 4K resolution, and suggested slightly modified model structure that might lead to better results.
+\\
+Feb 2022 - May 2022 &
+\textbf{Cluster algebra} (Algebraic Geometry/Algebraic Combinatorics - Math) \newline
+Supervised by Prof. Ivan Ip. This research project investigates the cluster algebraic structure over tensor invariant rings. We developed a theorem about the classification for the case \(n = 9\) and made conjectures about the underlying graph structure of the mutation graphs of the cluster algebras.
+\end{SectionTable}
+
+\begin{SectionTable}{\headingfont Publications}
+
+2022 & 
+\textbf{Cluster algebras and total positivity} \newline
+D. Chau \newline
+\textit{Submitted to Prof. Ivan Ip as part of the course requirements for SCIE3500}. \\
+
+2022 & 
+\textbf{Video crowd counting using Parasite-Host network} \newline
+J. Chang, D. Chau \newline
+\textit{Submitted to Prof. Gary Chan Sheung-Han as part of the course requirements for UROP1100}. \\
+
+2022 & 
+\textbf{Cluster Algebras over \(SL(V)\)-invariant Tensor Spaces} \newline
+D. Chau \newline
+\textit{Submitted to Prof. Ivan Ip as part of the course requirements for UROP1100}. \\
+
+2022 & 
+\textbf{History and Applications of Cluster Algebra} \newline
+D. Chau \newline
+\textit{Submitted to Prof. Ivan Ip as part of the course requirements for SCIE2500}. \\
+
+2021 & 
+\textbf{A self-contained, intuitive explanation on the insolvability of the quintics} \newline
+D. Chau \newline
+\textit{Math Journal (In preparation), commissioned by St. Joseph's College Maths Society}. \\
+
+2021 & 
+\textbf{Interesting irrationality proofs} \newline
+D. Chau \newline
+\textit{Math Journal (In preparation), commissioned by St. Joseph's College Maths Society}. \\
+\end{SectionTable}
+
+
+\begin{SectionTable}{\headingfont Teaching experience}
+
+Fall 2022 & 
+\textbf{Mentor, MATH1012: Calculus I} (Hong Kong University of Science and Technology) \newline
+Undergraduate student helper in the Mathvengers programme organized by the Science School, for first year science undergraduates who under-performed in HKDSE public exam. \\
+
+Summer 2022 & 
+\textbf{Undergraduate TA, COMP2211} (Hong Kong University of Science and Technology) \newline
+Undergraduate teaching assistant for the course COMP2211, in charge of creating self-tests for the course materials. \\
+
+Spring 2022 & 
+\textbf{Teaching Assistant, Math Olympiad Training} (St. Joseph's College) \newline
+Alumni student helper training secondary school students in competitive mathematics. Main topics included Number Theory and Combinatorics.
+ \newline
+\textit{Average student rating: N/A.} \\
+
+
+Fall 2021 & 
+\textbf{Mentor, MATH1012: Calculus I} (Hong Kong University of Science and Technology) \newline
+Undergraduate student helper in the Mathvengers programme organized by the Science School, for first year science undergraduates who under-performed in HKDSE public exam.
+ \newline
+\textit{Average student rating: 4.8/5.} \\
+
+
+Spring 2021 & 
+\textbf{Teaching Assistant, Math Olympiad Training} (St. Joseph's College) \newline
+Alumni student helper training secondary school students in competitive mathematics. Main topics included Number Theory and Combinatorics.
+ \newline
+\textit{Average student rating: N/A.} \\
+\end{SectionTable}
+
+\begin{SectionTable}{\headingfont Talks and outreach}
+Fall 2022 &
+A monad is a monoid in the category of endofunctors
+ \newline
+\textit{Talk commissioned by HKUST Math Journal Club. We present a high level introduction to Category Theory and discuss about its applications in functional programming and implications in other fields of mathematics.} \\
+Summer 2022 &
+Introduction to cluster algebras
+ \newline
+\textit{Presentation to fulfill part of the course requirements for SCIE2500. We present a brief introduction to cluster algebras and present the works by Fomin and Pylyavskyy on \(SL(V)\)-invariant tensor spaces.} \\
+Spring 2022 &
+Why the piano is mathematically out of tune
+\newline
+\textit{Talk commissioned by St. Joseph's College Math Society. We present a basic introduction to limits and measure theory from the perspective of a piano player.} \\
+Spring 2021 &
+Pi Day - \(\pi\) is irrational \newline
+\textit{Talk commissioned by St. Joseph's College Math Society. We present a simplified proof that \(\pi\) is irrational via graphical methods and elementary calculus.} \\
+Summer 2020 &
+An Elegant Fact about Prime Numbers (Fermat's Two Square Theorem) \newline
+\textit{Talk commissioned by St. Joseph's College Math Society. We introduce the Fermat's Two Square theorem and provide an argument accessible to junior secondary school students based on combinatorial theory, modified from a proof by David Christopher (2016)} \\
+\end{SectionTable}
+
+\end{document}
