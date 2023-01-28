@@ -23,6 +23,14 @@ def generate():
     with open('./github.privatekey', 'r') as f:
         token = f.read() 
         user = GitUser(token)
+        
+    def ignore(c, f):
+        if c.color.name in ["ShaderLab", "HLSL", "Mathematica", "Batchfile", "Ruby"]:
+            return True
+        if f < 0.002:
+            return True
+        return False
+        
     
     readme = ReadMe().add(
         Tagged("Hi, I'm Darin Chau", H1, CENTER),
@@ -66,7 +74,7 @@ def generate():
         ),
         ReadMe(),
         ReadMe("### My Github stats:"),
-        GitPieChart(user, 150, skip_entries=["ShaderLab", "HLSL", "Mathematica", "Batchfile", "Ruby"]).exportAsSVG(piepath, "https://github.com/darinchau/markdown-generator"),
+        GitPieChart(user, 150, ignore_key = ignore).exportAsSVG(piepath, "https://github.com/darinchau/markdown-generator"),
         ReadMe("Last updated: ").add(
             CurrentDate()
         ),

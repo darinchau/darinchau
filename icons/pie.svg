@@ -1,28 +1,24 @@
-<svg width="400" height="315" xmlns="http://www.w3.org/2000/svg">
-<svg x="0" y="82.5" height="150" width="150">
-	<path d="M75,75 L75.0,0.0 A75,75,0,0,1,149.97166569638958,77.06139339011308 Z" fill="#178600"></path>
-	<path d="M75,75 L144.8679181225374,47.733280042835915 A75,75,0,0,1,100.33608198222429,145.5909551556714 Z" fill="#178600"></path>
-	<path d="M75,75 L125.80183886499458,130.1740262074024 A75,75,0,0,1,18.450517029505335,124.26617476291146 Z" fill="#178600"></path>
-	<path d="M75,75 L18.697553744007024,124.54830517374961 A75,75,0,0,1,0.20815078777134488,69.41615800588418 Z" fill="#3D6117"></path>
-	<path d="M75,75 L0.18116659029810478,69.79018549166327 A75,75,0,0,1,21.32385444933925,22.61802410347351 Z" fill="#3572A5"></path>
-	<path d="M75,75 L21.06261661156799,22.88705848630977 A75,75,0,0,1,27.514547556429235,16.947163667660654 Z" fill="#f1e05a"></path>
-	<path d="M75,75 L27.224878151119064,17.185315599541838 A75,75,0,0,1,28.933999990009006,15.814498033052814 Z" fill="#f34b7d"></path>
-	<path d="M75,75 L28.63864953700451,16.045566890628926 A75,75,0,0,1,29.783554145485212,15.16294605943795 Z" fill="#dea584"></path>
-	<path d="M75,75 L29.48493532678181,15.389775308318413 A75,75,0,0,1,29.862118380059492,15.103659186355657 Z" fill="#e34c26"></path>
-	<path d="M75,75 L29.563202146174937,15.330096356784367 A75,75,0,0,1,29.611873612617487,15.293065871349654 Z" fill="#563d7c"></path>
-	<path d="M75,75 L29.31390753626502,15.520751892823519 A75,75,0,0,1,75.0,0.0 Z" fill="#DEDEDE"></path>
+<svg width="400" height="245" xmlns="http://www.w3.org/2000/svg">
+<svg x="0" y="47.5" height="150" width="150">
+	<path d="M75,75 L75.0,0.0 A75,75,0,0,1,149.9772813943975,76.84588046886448 Z" fill="#178600"></path>
+	<path d="M75,75 L144.80897253292727,47.58271797028366 A75,75,0,0,1,100.69085667815429,145.46261337150742 Z" fill="#178600"></path>
+	<path d="M75,75 L126.03926101706635,129.9544705627465 A75,75,0,0,1,18.806010955735246,124.67127535400166 Z" fill="#178600"></path>
+	<path d="M75,75 L19.055068721087977,124.95162323886794 A75,75,0,0,1,0.1628064788484238,70.06092459283025 Z" fill="#3D6117"></path>
+	<path d="M75,75 L0.13904666767997753,70.43517073964372 A75,75,0,0,1,21.298950794458747,22.643555179672134 Z" fill="#3572A5"></path>
+	<path d="M75,75 L21.037840922831613,22.912713761126184 A75,75,0,0,1,27.474736933002305,16.97975034168963 Z" fill="#f1e05a"></path>
+	<path d="M75,75 L27.185230958015147,17.21810091852599 A75,75,0,0,1,28.890304183943925,15.848533815713573 Z" fill="#f34b7d"></path>
+	<path d="M75,75 L28.5951244553401,16.079820725963287 A75,75,0,0,1,29.850531583792744,15.11239275330911 Z" fill="#dea584"></path>
+	<path d="M75,75 L29.55165916239566,15.338887748308402 A75,75,0,0,1,75.0,0.0 Z" fill="#DEDEDE"></path>
 </svg>
-<foreignObject x="180" y="0" width="250" height="315">
+<foreignObject x="180" y="0" width="250" height="245">
     <div xmlns="http://www.w3.org/1999/xhtml">
-		<p><span style="background-color: #178600; color: #ffffff">C#</span>: 63.59%</p>
-		<p><span style="background-color: #3D6117; color: #ffffff">TeX</span>: 12.67%</p>
-		<p><span style="background-color: #3572A5; color: #ffffff">Python</span>: 11.2%</p>
+		<p><span style="background-color: #178600; color: #ffffff">C#</span>: 63.48%</p>
+		<p><span style="background-color: #3D6117; color: #ffffff">TeX</span>: 12.65%</p>
+		<p><span style="background-color: #3572A5; color: #ffffff">Python</span>: 11.33%</p>
 		<p><span style="background-color: #f1e05a; color: #000000">JavaScript</span>: 1.86%</p>
 		<p><span style="background-color: #f34b7d; color: #ffffff">C++</span>: 0.46%</p>
-		<p><span style="background-color: #dea584; color: #000000">Rust</span>: 0.31%</p>
-		<p><span style="background-color: #e34c26; color: #ffffff">HTML</span>: 0.1%</p>
-		<p><span style="background-color: #563d7c; color: #ffffff">CSS</span>: 0.01%</p>
-		<p><span style="background-color: #DEDEDE; color: #000000">Others</span>: 9.79%</p>
+		<p><span style="background-color: #dea584; color: #000000">Rust</span>: 0.34%</p>
+		<p><span style="background-color: #DEDEDE; color: #000000">Others</span>: 9.88%</p>
     </div>
 </foreignObject>
 </svg>
