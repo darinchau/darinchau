@@ -2,8 +2,8 @@
 <h3 align="center">Undergraduate software developer from HKUST</h3>
 
 - 🏫 I'm a student in Mathematics and Computer Science (Hong Kong University of Science and Technology)
-- 📄 Know about [my experiences](https://github.com/darinchau/darinchau/blob/main/latex/Resume.pdf)
-- 🌱 I'm currently learning **SQL, Rust full-stack development**
+- 📄 Know about [my experiences](https://github.com/darinchau/darinchau/blob/main/CV/Curriculum%20Vitae.pdf)
+- 🌱 I'm currently learning **Rust app development**
 - 🔎 I have conducted research work in Mathematics (Cluster algebra) and Computer Science (CNN Crowd Counting)
 - 🎹 I am proficient at piano performance **(DipABRSM)**
 

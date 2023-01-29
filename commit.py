@@ -38,9 +38,9 @@ def generate():
         ReadMe(),
         Point("🏫 I'm a student in Mathematics and Computer Science (Hong Kong University of Science and Technology)"),
         Point(f'📄 Know about ').add(
-            Hyperlink("my experiences", "https://github.com/darinchau/darinchau/blob/main/latex/Resume.pdf")
+            Hyperlink("my experiences", "https://github.com/darinchau/darinchau/blob/main/CV/Curriculum%20Vitae.pdf")
         ),
-        Point("🌱 I'm currently learning **SQL, Rust full-stack development**"),
+        Point("🌱 I'm currently learning **Rust app development**"),
         Point("🔎 I have conducted research work in Mathematics (Cluster algebra) and Computer Science (CNN Crowd Counting)"),
         Point("🎹 I am proficient at piano performance **(DipABRSM)**"),
         ReadMe(),
