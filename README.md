@@ -15,4 +15,7 @@
 
 ### My Github stats:
 ![https://github.com/darinchau/markdown-generator](./icons/pie.svg)
-Last updated: 27/01/2023
+
+Pie chart generated with [my markdown generator](https://github.com/darinchau/markdown-generator)
+
+Last updated: 29/01/2023

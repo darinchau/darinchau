@@ -75,6 +75,11 @@ def generate():
         ReadMe(),
         ReadMe("### My Github stats:"),
         GitPieChart(user, 150, ignore_key = ignore).exportAsSVG(piepath, "https://github.com/darinchau/markdown-generator"),
+        ReadMe(),
+        ReadMe("Pie chart generated with ").add(
+            Hyperlink("my markdown generator", "https://github.com/darinchau/markdown-generator"),
+        ),
+        ReadMe(),
         ReadMe("Last updated: ").add(
             CurrentDate()
         ),
