@@ -27,7 +27,7 @@ def generate():
     def ignore(c, f):
         if c.color.name in ["ShaderLab", "HLSL", "Mathematica", "Batchfile", "Ruby"]:
             return True
-        if f < 0.002:
+        if f < 0.01:
             return True
         return False
         
