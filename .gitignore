@@ -1,2 +1,3 @@
 .vscode
 *.privatekey
+__pycache__

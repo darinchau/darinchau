@@ -4,10 +4,10 @@
 ## 2. Dynamically create the ReadMe
 ## 3. Redraw the pie chart
 
-## This uses the markdown generator library on https://github.com/darinchau/markdown-generator
-
-from MDgen import Image, ReadMe, Tagged, Point, Hyperlink, CurrentDate
-from MDgen.profile import dev, GitPieChart, GitUser
+from diagrams.base import Image, ReadMe, Tagged, Point, Hyperlink, CurrentDate
+from diagrams.images import dev
+from diagrams.user import GitUser
+from diagrams.piechart import GitPieChart
 
 linkedin = Image("https://linkedin.com/in/darinchauyf", "https://raw.githubusercontent.com/darinchau/darinchau/c2e538bb063a2b8077212ada96dead8d42fd3866/icons/linked%20in.svg", "LinkedIn")
 instagram = Image("https://www.instagram.com/dc.darin/", "https://raw.githubusercontent.com/darinchau/darinchau/main/icons/instagram.svg", "Instagram @dc.darin")
@@ -19,11 +19,13 @@ H3 = "h3"
 LEFT = 'aligh="left"'
 
 def generate():
+    # Get the user
     piepath = './icons/pie.svg'
     with open('./github.privatekey', 'r') as f:
         token = f.read() 
         user = GitUser(token)
-        
+    
+    # Languages to ignore (stash into "Other")
     def ignore(c, f):
         if c.color.name in ["ShaderLab", "HLSL", "Mathematica", "Batchfile", "Ruby"]:
             return True
