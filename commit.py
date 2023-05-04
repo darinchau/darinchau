@@ -81,7 +81,7 @@ def generate():
             dev.unity,
         ),
         ReadMe(),
-        ReadMe("### My Github stats:"),
+        ReadMe("### My Stats:"),
         Charts(user, "https://github.com/darinchau/markdown-generator", piepath, ignore_key=ignore),
         ReadMe(),
         ReadMe("Last updated: ").add(
