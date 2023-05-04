@@ -95,7 +95,5 @@ class Charts(ReadMe):
 
         fig.tight_layout()
 
-        fig.show()
-
         fig.savefig(relative_path, bbox_inches='tight')
         self._content = f"![{hyperlink}]({relative_path})"
