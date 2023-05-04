@@ -4,10 +4,18 @@
 ## 2. Dynamically create the ReadMe
 ## 3. Redraw the pie chart
 
+from __future__ import annotations
+from typing import Callable
+import numpy as np
+import matplotlib.pyplot as plt
 from diagrams.base import Image, ReadMe, Tagged, Point, Hyperlink, CurrentDate
 from diagrams.images import dev
 from diagrams.user import GitUser
 from diagrams.piechart import GitPieChart
+from diagrams.infoclass import ChartInfo, ColorInfo
+from diagrams.git_colors import COLORS
+from diagrams.charts import Charts
+import json
 
 linkedin = Image("https://linkedin.com/in/darinchauyf", "https://raw.githubusercontent.com/darinchau/darinchau/c2e538bb063a2b8077212ada96dead8d42fd3866/icons/linked%20in.svg", "LinkedIn")
 instagram = Image("https://www.instagram.com/dc.darin/", "https://raw.githubusercontent.com/darinchau/darinchau/main/icons/instagram.svg", "Instagram @dc.darin")
@@ -26,14 +34,13 @@ def generate():
         user = GitUser(token)
     
     # Languages to ignore (stash into "Other")
-    def ignore(c, f):
+    def ignore(c: ChartInfo, f: float):
         if c.color.name in ["ShaderLab", "HLSL", "Mathematica", "Batchfile", "Ruby"]:
             return True
         if f < 0.01:
             return True
         return False
-        
-    
+
     readme = ReadMe().add(
         Tagged("Hi, I'm Darin Chau", H1, CENTER),
         Tagged("Undergraduate software developer from HKUST", H3, CENTER),
@@ -72,15 +79,10 @@ def generate():
             dev.tensorflow,
             dev.typescript,
             dev.unity,
-            dev.vue
         ),
         ReadMe(),
         ReadMe("### My Github stats:"),
-        GitPieChart(user, 150, ignore_key = ignore).exportAsSVG(piepath, "https://github.com/darinchau/markdown-generator"),
-        ReadMe(),
-        ReadMe("Pie chart generated with ").add(
-            Hyperlink("my markdown generator", "https://github.com/darinchau/markdown-generator"),
-        ),
+        Charts(user, "https://github.com/darinchau/markdown-generator", piepath, ignore_key=ignore),
         ReadMe(),
         ReadMe("Last updated: ").add(
             CurrentDate()
