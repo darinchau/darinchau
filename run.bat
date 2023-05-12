@@ -1,4 +1,4 @@
 python commit.py
 git add .
 git commit -m "Update pie"
-git push origin master
+git push origin main
