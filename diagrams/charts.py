@@ -82,14 +82,14 @@ class Charts(ReadMe):
         for lang, (color, subs) in submissions.items():
             x = [s[0] for s in subs]
             y = [s[1] for s in subs]
-            leet_ax.scatter(x, y, c=color.color, label = lang)
+            leet_ax.scatter(x, y, c=color.color, alpha=0.7, label = lang)
         leet_ax.set_ylabel("Memory")
         leet_ax.set_xlabel("Runtime")
         leet_ax.set_ylim(0, 110)
         leet_ax.set_xlim(0, 110)
         leet_ax.set_xticks([0, 20, 40, 60, 80, 100])
         leet_ax.set_yticks([0, 20, 40, 60, 80, 100])
-        leet_ax.legend(loc='upper left')
+        leet_ax.legend(loc='lower left', fontsize=9)
         leet_ax.set_aspect('equal', adjustable='box')
         leet_ax.set_title('LeetCode Submission')
 
