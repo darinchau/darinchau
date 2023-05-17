@@ -49,7 +49,7 @@ def generate():
         Point(f'📄 Know about ').add(
             Hyperlink("my experiences", "https://github.com/darinchau/darinchau/blob/main/CV/Curriculum%20Vitae.pdf")
         ),
-        Point("🌱 I'm currently learning **Rust app development**"),
+        Point("🌱 I'm currently learning **Rust**, **TypeScript**, **SQL**"),
         Point("🔎 I have conducted research work in Mathematics (Cluster algebra) and Computer Science (CNN Crowd Counting)"),
         Point("🎹 I am proficient at piano performance **(DipABRSM)**"),
         ReadMe(),
@@ -77,7 +77,6 @@ def generate():
             dev.rust,
             dev.seaborn,
             dev.tensorflow,
-            dev.typescript,
             dev.unity,
         ),
         ReadMe(),
