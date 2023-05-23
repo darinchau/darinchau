@@ -11,7 +11,6 @@ import matplotlib.pyplot as plt
 from diagrams.base import Image, ReadMe, Tagged, Point, Hyperlink, CurrentDate
 from diagrams.images import dev
 from diagrams.user import GitUser
-from diagrams.piechart import GitPieChart
 from diagrams.infoclass import ChartInfo, ColorInfo
 from diagrams.git_colors import COLORS
 from diagrams.charts import Charts

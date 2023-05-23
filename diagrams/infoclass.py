@@ -29,7 +29,7 @@ class ColorInfo:
         color = f"#{r}{g}{b}"
         return cls(color, name)
     
-    def isDark(self, threshold: float = 0.65):
+    def is_dark(self, threshold: float = 0.65):
         r = int(self.color[1:3], base = 16)
         g = int(self.color[3:5], base = 16)
         b = int(self.color[5:7], base = 16)

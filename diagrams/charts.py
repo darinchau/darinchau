@@ -8,63 +8,74 @@ from diagrams.infoclass import ChartInfo, ColorInfo
 from diagrams.git_colors import COLORS
 import json
 
+def gen_github_info(user: GitUser, ignore_key: Callable[[ChartInfo, float], bool]):
+    # Set keys to ignore
+    if ignore_key is None:
+        ignore_key = lambda c, f: False
+    
+    # Get all the language infos
+    entries: list[tuple[ChartInfo, float]] = []
+    other_bytes = 0
+    for language, num_bytes in user.total_languages.items():
+        color = COLORS.get(language)
+        if color is None:
+            other_bytes += num_bytes
+            continue
+
+        info = ChartInfo(num_bytes, color)
+        percentage_in_repo = num_bytes / user.total_bytes
+        if ignore_key(info, percentage_in_repo):
+            other_bytes += num_bytes
+            continue
+
+        entries.append((info, percentage_in_repo))
+    
+    # Finalize entries and sort them
+    # Reverse the entries because we want a clockwise pie chart
+    entries.sort(key = lambda x: x[0].amount, reverse = True)
+    entries.append((ChartInfo(other_bytes, ColorInfo("#AAAAAA", "Others")), other_bytes/user.total_bytes))
+    entry = [x.amount for x, _ in entries]
+    label = [f"{x.color.name}: {percentage * 100:.2f}%" for x, percentage in entries]
+    color = [x.color.color for x, _ in entries]
+    return entry, color, label
+
+
+def gen_leetcode_info(user: GitUser):
+    # Load leetcode repo
+    leetcode = None
+    for repo in user.repos:
+        if repo.full_name == "darinchau/my-leet-code-submissions":
+            leetcode = repo
+            break
+    if leetcode is None:
+        raise AssertionError("Cannot find leet code repository")
+    x = leetcode.get_contents("stats.json").decoded_content
+    js = json.loads(x.decode())
+    
+    # Sort the submissions according to language
+    submissions: dict[str, tuple[ColorInfo, list[tuple[float, float]]]] = {}
+    for entries in js['submissions']:
+        language: str = entries['language']
+        color = COLORS.get(language)
+        if color is None:
+            color = ColorInfo("#AAAAAA", "Others")
+            language = "Others"
+        try:
+            submissions[language][1].append((entries['runtime'], entries['memory']))
+        except KeyError:
+            submissions[language] = (color, [(entries['runtime'], entries['memory'])])
+            
+    return submissions
+
 # This builds on the diagrams base thing and creates the chart
 class Charts(ReadMe):
     def __init__(self, user: GitUser, hyperlink: str, relative_path: str, ignore_key: Callable[[ChartInfo, float], bool] | None = None):
         """Process all the repo information and creates the language pie chart for you
         This is the wrapper class to generate it"""
-        # Set keys to ignore
-        if ignore_key is None:
-            ignore_key: Callable[[ChartInfo, float], bool] = lambda c, f: False
-        
-        # Get all the language infos
-        entries: list[tuple[ChartInfo, float]] = []
-        other_bytes = 0
-        for language, num_bytes in user.total_languages.items():
-            color = COLORS.get(language)
-            if color is None:
-                other_bytes += num_bytes
-                continue
 
-            info = ChartInfo(num_bytes, color)
-            percentage_in_repo = num_bytes / user.total_bytes
-            if ignore_key(info, percentage_in_repo):
-                other_bytes += num_bytes
-                continue
+        pie_entries, pie_color, pie_labels = gen_github_info(user, ignore_key)
+        submissions = gen_leetcode_info(user)
 
-            entries.append((info, percentage_in_repo))
-        
-        # Finalize entries and sort them
-        # Reverse the entries because we want a clockwise pie chart
-        entries.sort(key = lambda x: x[0].amount, reverse = True)
-        entries.append((ChartInfo(other_bytes, ColorInfo("#AAAAAA", "Others")), other_bytes/user.total_bytes))
-        pie_entries = [x.amount for x, _ in entries]
-        pie_labels = [f"{x.color.name}: {percentage * 100:.2f}%" for x, percentage in entries]
-        pie_color = [x.color.color for x, _ in entries]
-
-        # Time for leetcode
-        leetcode = None
-        for repo in user.repos:
-            if repo.full_name == "darinchau/my-leet-code-submissions":
-                leetcode = repo
-                break
-        if leetcode is None:
-            raise AssertionError("Cannot find leet code repository")
-        x = leetcode.get_contents("stats.json").decoded_content
-        js = json.loads(x.decode())
-        
-        # Sort the submissions according to language
-        submissions: dict[str, tuple[ColorInfo, list[tuple[float, float]]]] = {}
-        for entries in js['submissions']:
-            language: str = entries['language']
-            color = COLORS.get(language)
-            if color is None:
-                color = ColorInfo("#AAAAAA", "Others")
-                language = "Others"
-            try:
-                submissions[language][1].append((entries['runtime'], entries['memory']))
-            except KeyError:
-                submissions[language] = (color, [(entries['runtime'], entries['memory'])])
         
         # Here is the pie chart
         pie_ax: plt.Axes
