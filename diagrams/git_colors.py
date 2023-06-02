@@ -52,7 +52,7 @@ class ColorContainer:
         self.colorinfos = colorinfos
         ColorContainer.instance = self
         return self
-    
+
     def get(self, x):
         return self.colorinfos[x]
 
