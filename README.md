@@ -2,7 +2,6 @@
 <h3 align="center">Undergraduate software developer from HKUST</h3>
 
 - 🏫 I'm a student in Mathematics and Computer Science (Hong Kong University of Science and Technology)
-- 📄 Know about [my experiences](https://github.com/darinchau/darinchau/blob/main/CV/Curriculum%20Vitae.pdf)
 - 🌱 I'm currently learning **Rust**, **TypeScript**, **SQL**
 - 🔎 I have conducted research work in Mathematics (Cluster algebra) and Computer Science (CNN Crowd Counting)
 - 🎹 I am proficient at piano performance **(DipABRSM)**
@@ -16,4 +15,4 @@
 ### My Stats:
 ![https://github.com/darinchau/markdown-generator](./icons/pie.svg)
 
-Last updated: 20/06/2023
+Last updated: 11/07/2023

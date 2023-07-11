@@ -45,9 +45,9 @@ def generate():
         Tagged("Undergraduate software developer from HKUST", H3, CENTER),
         ReadMe(),
         Point("🏫 I'm a student in Mathematics and Computer Science (Hong Kong University of Science and Technology)"),
-        Point(f'📄 Know about ').add(
-            Hyperlink("my experiences", "https://github.com/darinchau/darinchau/blob/main/CV/Curriculum%20Vitae.pdf")
-        ),
+        # Point(f'📄 Know about ').add(
+        #     Hyperlink("my experiences", "https://github.com/darinchau/darinchau/blob/main/CV/Curriculum%20Vitae.pdf")
+        # ),
         Point("🌱 I'm currently learning **Rust**, **TypeScript**, **SQL**"),
         Point("🔎 I have conducted research work in Mathematics (Cluster algebra) and Computer Science (CNN Crowd Counting)"),
         Point("🎹 I am proficient at piano performance **(DipABRSM)**"),
