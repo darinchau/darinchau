@@ -1,4 +1,5 @@
 from github import Github
+from github.Repository import Repository
 import threading
 from queue import Queue
 
@@ -14,14 +15,21 @@ class GitUser:
         result_queue = Queue()
         threads = []
 
-        def process_repo(repo):
+        with open("diagrams/forks.txt", 'r') as f:
+            forks = f.readlines()
+        forks = [f.strip() for f in forks]
+
+        def process_repo(repo: Repository):
             if repo.owner.name != usr.name:
                 return
-            stats = repo.get_stats_contributors()
-            if stats is not None:
-                first_author = stats[0].author
-                if first_author.name != usr.name:
-                    return
+            if repo.name in forks:
+                return
+            print(repo.name)
+            # stats = repo.get_stats_contributors()
+            # if stats is not None:
+            #     first_author = stats[0].author
+            #     if first_author.name != usr.name:
+            #         return
             for k, v in repo.get_languages().items():
                 result_queue.put((k, v))
 
