@@ -1,3 +1,4 @@
+pip install -r requirements.txt
 python commit.py
 git add .
 git commit -m "Update pie"
