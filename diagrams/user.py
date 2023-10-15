@@ -24,7 +24,7 @@ class GitUser:
                 return
             if repo.name in forks:
                 return
-            print(repo.name)
+            print("    " + repo.name)
             # stats = repo.get_stats_contributors()
             # if stats is not None:
             #     first_author = stats[0].author
@@ -34,6 +34,7 @@ class GitUser:
                 result_queue.put((k, v))
 
         # Use multithreading because we make soooo many request calls inside process repo
+        print("The following repos will be counted:")
         for repo in self.repos:
             thread = threading.Thread(target=process_repo, args=(repo,))
             thread.start()
@@ -43,10 +44,22 @@ class GitUser:
             thread.join()
 
         # Process the language info to expose to other modules
-        self.total_languages: dict[str, int] = {}
-        self.total_bytes = 0
+        self._total_languages: dict[str, int] = {}
+        self._total_bytes = 0
 
         while not result_queue.empty():
             k, v = result_queue.get()
-            self.total_languages[k] = self.total_languages.get(k, 0) + v
-            self.total_bytes += v
+            self._total_languages[k] = self._total_languages.get(k, 0) + v
+            self._total_bytes += v
+
+    @property
+    def total_bytes(self):
+        """Total number of bytes of code in the repo"""
+        return self._total_bytes
+    
+    def __getitem__(self, k):
+        """Total number of languages"""
+        return self._total_languages.get(k, 0)
+    
+    def languages(self):
+        return sorted(self._total_languages.items(), key=lambda x: x[1], reverse=True)

@@ -16,14 +16,17 @@ def gen_github_info(user: GitUser, ignore_key: Callable[[ChartInfo, float], bool
     # Get all the language infos
     entries: list[tuple[ChartInfo, float]] = []
     other_bytes = 0
-    for language, num_bytes in user.total_languages.items():
+    print("There are these languages:")
+    for language, num_bytes in user.languages():
+        percentage_in_repo = num_bytes / user.total_bytes
+        print(f"    {language}: {round(percentage_in_repo*100, 2)}%")
+
         color = COLORS.get(language)
         if color is None:
             other_bytes += num_bytes
             continue
 
         info = ChartInfo(num_bytes, color)
-        percentage_in_repo = num_bytes / user.total_bytes
         if ignore_key(info, percentage_in_repo):
             other_bytes += num_bytes
             continue

@@ -21,6 +21,7 @@ class GitLanguageInfo(ColorInfo):
 # Singleton object to hold all the git colors
 class ColorContainer:
     instance = None
+    colorinfos: dict[str, GitLanguageInfo]
     def __new__(cls):
         if ColorContainer.instance is not None:
             return ColorContainer.instance
@@ -35,7 +36,7 @@ class ColorContainer:
         yml_content = response.text
         dic: dict[str, dict] = yaml.safe_load(yml_content)
         
-        colorinfos = {}
+        colorinfos: dict[str, GitLanguageInfo] = {}
         
         for k, v in dic.items():
             try:
@@ -53,7 +54,7 @@ class ColorContainer:
         ColorContainer.instance = self
         return self
 
-    def get(self, x):
+    def get(self, x) -> GitLanguageInfo:
         return self.colorinfos[x]
 
 COLORS = ColorContainer()
