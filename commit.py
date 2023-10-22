@@ -92,7 +92,7 @@ def github() -> None:
     print("Doing github commit")
     subprocess.call(["git", "add", "."])
     subprocess.call(["git", "commit", "-m", "update pie"])
-    subprocess.call(["git", "push", "origin", "master"])
+    subprocess.call(["git", "push", "origin", "main"])
     return
 
 if __name__ == "__main__":
