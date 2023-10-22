@@ -15,6 +15,7 @@ from diagrams.infoclass import ChartInfo, ColorInfo
 from diagrams.git_colors import COLORS
 from diagrams.charts import Charts
 import json
+import subprocess
 
 linkedin = Image("https://linkedin.com/in/darinchauyf", "https://raw.githubusercontent.com/darinchau/darinchau/c2e538bb063a2b8077212ada96dead8d42fd3866/icons/linked%20in.svg", "LinkedIn")
 instagram = Image("https://www.instagram.com/dc.darin/", "https://raw.githubusercontent.com/darinchau/darinchau/main/icons/instagram.svg", "Instagram @dc.darin")
@@ -87,5 +88,13 @@ def generate():
     
     readme.export("./README.md")
     
+def github() -> None:
+    print("Doing github commit")
+    subprocess.call(["git", "add", "."])
+    subprocess.call(["git", "commit", "-m", "update pie"])
+    subprocess.call(["git", "push", "origin", "master"])
+    return
+
 if __name__ == "__main__":
     generate()
+    github()
