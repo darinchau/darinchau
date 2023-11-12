@@ -15,4 +15,4 @@
 ### My Stats:
 ![https://github.com/darinchau/markdown-generator](./icons/pie.svg)
 
-Last updated: 31/10/2023
+Last updated: 12/11/2023
