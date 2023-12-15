@@ -2,3 +2,4 @@
 *.privatekey
 __pycache__
 .venv
+leetcode.cookies
