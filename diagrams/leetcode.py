@@ -3,6 +3,8 @@ import json
 import time
 from tqdm import tqdm
 from dataclasses import dataclass
+from diagrams.git import COLORS
+import random
 
 def get_payload(submission_id):
     return {"query": """
@@ -31,7 +33,7 @@ def get_submission_details(submission_id):
     data = response.json()["data"]["submissionDetails"]
     return (data["runtimePercentile"], data["memoryPercentile"])
 
-sleep_time = 1
+sleep_time = 0.3
 
 # Get a set of submission using the offset and lastkey
 def get_submission(offset, lastkey):
@@ -51,7 +53,8 @@ def get_all_submissions():
             break
         lastkey = data["last_key"]
         offset += 20
-        time.sleep(sleep_time)
+        break
+        time.sleep(random.random())
     return submissions
 
 @dataclass
@@ -60,6 +63,14 @@ class SubmissionDetail:
     runtime_percentile: float
     memory_percentile: float
     language: str
+
+    @property
+    def color(self):
+        mapping = {
+            "Python3": "Python",
+        }
+        name = mapping.get(self.language, self.language)
+        return COLORS.get(name).color
 
 # Get all submission details, including runtime and memory percentile
 def get_all_submission_details() -> list[SubmissionDetail]:
@@ -70,8 +81,8 @@ def get_all_submission_details() -> list[SubmissionDetail]:
         if not submission["status_display"] == "Accepted":
             continue
         submissionID = submission["id"]
-        language = submission["lang"]
+        language = submission["lang_name"]
         runtime, memory = get_submission_details(submissionID)
         submission_details.append(SubmissionDetail(submissionID, runtime, memory, language))
-        time.sleep(sleep_time)
+        time.sleep(random.random())
     return submission_details

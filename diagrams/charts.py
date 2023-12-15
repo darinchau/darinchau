@@ -3,72 +3,10 @@ from typing import Callable
 import numpy as np
 import matplotlib.pyplot as plt
 from diagrams.base import ReadMe
-from diagrams.user import GitUser
 from diagrams.infoclass import ChartInfo, ColorInfo
-from diagrams.git_colors import COLORS
 import json
-
-def gen_github_info(user: GitUser, ignore_key: Callable[[ChartInfo, float], bool]):
-    # Set keys to ignore
-    if ignore_key is None:
-        ignore_key = lambda c, f: False
-    
-    # Get all the language infos
-    entries: list[tuple[ChartInfo, float]] = []
-    other_bytes = 0
-    print("There are these languages:")
-    for language, num_bytes in user.languages():
-        percentage_in_repo = num_bytes / user.total_bytes
-        print(f"    {language}: {round(percentage_in_repo*100, 2)}%")
-
-        color = COLORS.get(language)
-        if color is None:
-            other_bytes += num_bytes
-            continue
-
-        info = ChartInfo(num_bytes, color)
-        if ignore_key(info, percentage_in_repo):
-            other_bytes += num_bytes
-            continue
-
-        entries.append((info, percentage_in_repo))
-    
-    # Finalize entries and sort them
-    # Reverse the entries because we want a clockwise pie chart
-    entries.sort(key = lambda x: x[0].amount, reverse = True)
-    entries.append((ChartInfo(other_bytes, ColorInfo("#AAAAAA", "Others")), other_bytes/user.total_bytes))
-    entry = [x.amount for x, _ in entries]
-    label = [f"{x.color.name}: {percentage * 100:.2f}%" for x, percentage in entries]
-    color = [x.color.color for x, _ in entries]
-    return entry, color, label
-
-
-def gen_leetcode_info(user: GitUser):
-    # Load leetcode repo
-    leetcode = None
-    for repo in user.repos:
-        if repo.full_name == "darinchau/my-leet-code-submissions":
-            leetcode = repo
-            break
-    if leetcode is None:
-        raise AssertionError("Cannot find leet code repository")
-    x = leetcode.get_contents("stats.json").decoded_content
-    js = json.loads(x.decode())
-    
-    # Sort the submissions according to language
-    submissions: dict[str, tuple[ColorInfo, list[tuple[float, float]]]] = {}
-    for entries in js['submissions']:
-        language: str = entries['language']
-        color = COLORS.get(language)
-        if color is None:
-            color = ColorInfo("#AAAAAA", "Others")
-            language = "Others"
-        try:
-            submissions[language][1].append((entries['runtime'], entries['memory']))
-        except KeyError:
-            submissions[language] = (color, [(entries['runtime'], entries['memory'])])
-            
-    return submissions
+from diagrams.git import GitUser, gen_github_info
+from diagrams.leetcode import get_all_submission_details, SubmissionDetail
 
 # This builds on the diagrams base thing and creates the chart
 class Charts(ReadMe):
@@ -77,8 +15,7 @@ class Charts(ReadMe):
         This is the wrapper class to generate it"""
 
         pie_entries, pie_color, pie_labels = gen_github_info(user, ignore_key)
-        submissions = gen_leetcode_info(user)
-
+        submissions = get_all_submission_details()
         
         # Here is the pie chart
         pie_ax: plt.Axes
@@ -93,10 +30,16 @@ class Charts(ReadMe):
         pie_ax.legend(pie_labels, bbox_to_anchor=(1,0), loc="lower left")
 
         # Here is the leet code scatter
-        for lang, (color, subs) in submissions.items():
-            x = [s[0] for s in subs]
-            y = [s[1] for s in subs]
-            leet_ax.scatter(x, y, c=color.color, alpha=0.7, label = lang)
+        submit_languages = {}
+        for detail in submissions:
+            if (detail.language, detail.color) not in submit_languages:
+                submit_languages[(detail.language, detail.color)] = []
+            submit_languages[(detail.language, detail.color)].append((detail.runtime_percentile, detail.memory_percentile))
+        
+        print(submit_languages)
+        for k, v in submit_languages.items():
+            leet_ax.scatter([x[0] for x in v], [x[1] for x in v], label=k[0], color=k[1], alpha=0.7)
+        
         leet_ax.set_ylabel("Memory")
         leet_ax.set_xlabel("Runtime")
         leet_ax.set_ylim(0, 110)

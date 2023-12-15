@@ -10,9 +10,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from diagrams.base import Image, ReadMe, Tagged, Point, Hyperlink, CurrentDate
 from diagrams.images import dev
-from diagrams.user import GitUser
+from diagrams.git import GitUser
 from diagrams.infoclass import ChartInfo, ColorInfo
-from diagrams.git_colors import COLORS
 from diagrams.charts import Charts
 import json
 import subprocess
@@ -97,4 +96,4 @@ def github() -> None:
 
 if __name__ == "__main__":
     generate()
-    github()
+    # github()

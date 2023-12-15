@@ -1,1 +1,0 @@
-# This contains a definition for a minimal leetcode api
