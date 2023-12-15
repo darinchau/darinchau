@@ -53,7 +53,6 @@ def get_all_submissions():
             break
         lastkey = data["last_key"]
         offset += 20
-        break
         time.sleep(random.random())
     return submissions
 
