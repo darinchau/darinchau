@@ -34,9 +34,8 @@ class Charts(ReadMe):
         for detail in submissions:
             if (detail.language, detail.color) not in submit_languages:
                 submit_languages[(detail.language, detail.color)] = []
-            submit_languages[(detail.language, detail.color)].append((detail.runtime_percentile, detail.memory_percentile))
-        
-        print(submit_languages)
+            submit_languages[(detail.language, detail.color)].append((detail.memory_percentile, detail.runtime_percentile))
+
         for k, v in submit_languages.items():
             leet_ax.scatter([x[0] for x in v], [x[1] for x in v], label=k[0], color=k[1], alpha=0.7)
         

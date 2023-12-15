@@ -76,12 +76,17 @@ def get_all_submission_details() -> list[SubmissionDetail]:
     print("Getting submissions...")
     submissions = get_all_submissions()
     submission_details = []
+    count = 0
     for submission in tqdm(submissions, "Getting language info"):
         if not submission["status_display"] == "Accepted":
             continue
         submissionID = submission["id"]
         language = submission["lang_name"]
-        runtime, memory = get_submission_details(submissionID)
-        submission_details.append(SubmissionDetail(submissionID, runtime, memory, language))
-        time.sleep(random.random())
+        try:
+            runtime, memory = get_submission_details(submissionID)
+            submission_details.append(SubmissionDetail(submissionID, runtime, memory, language))
+            time.sleep(random.random())
+        except Exception as e:
+            print(f"Error at {submissionID}: {submission['title']}")
+            continue
     return submission_details
