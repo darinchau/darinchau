@@ -71,6 +71,7 @@ def generate():
             dev.react,
             dev.reactnative,
             dev.rust,
+            dev.scala,
             dev.seaborn,
             dev.tensorflow,
             dev.unity,
