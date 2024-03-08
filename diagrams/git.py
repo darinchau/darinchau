@@ -91,6 +91,10 @@ class GitUser:
             #     if first_author.name != usr.name:
             #         return
             for k, v in repo.get_languages().items():
+                # Artificially cut off Jupyter because it is just python and it tends to be THICC
+                if k == "Jupyter Notebook":
+                    k = "Python"
+                    v *= .5
                 result_queue.put((k, v))
 
         # Use multithreading because we make soooo many request calls inside process repo
@@ -158,6 +162,12 @@ def gen_github_info(user: GitUser, ignore_key: Callable[[ChartInfo, float], bool
     # Reverse the entries because we want a clockwise pie chart
     entries.sort(key = lambda x: x[0].amount, reverse = True)
     entries.append((ChartInfo(other_bytes, ColorInfo("#AAAAAA", "Others")), other_bytes/user.total_bytes))
+
+    # Artificially cut the number of entries to 8
+    while len(entries) > 8:
+        last = entries.pop(-2)
+        entries[-1] = (ChartInfo(entries[-1][0].amount + last[0].amount, entries[-1][0].color), entries[-1][1] + last[1])
+    
     entry = [x.amount for x, _ in entries]
     label = [f"{x.color.name}: {percentage * 100:.2f}%" for x, percentage in entries]
     color = [x.color.color for x, _ in entries]

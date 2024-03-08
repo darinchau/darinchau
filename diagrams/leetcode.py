@@ -22,7 +22,11 @@ COOKIES = None
 def get_cookie():
     global COOKIES
     if COOKIES is None:
-        COOKIES = json.load(open("leetcode.cookies"))
+        with open("leetcode.cookies") as f:
+            st = f.read()
+            st = st.strip()
+            st = [x.split("=") for x in st.split(";")]
+            COOKIES = {x[0]: x[1] for x in st}
     return COOKIES
 
 # Get the runtime and memory percentile of a submission
