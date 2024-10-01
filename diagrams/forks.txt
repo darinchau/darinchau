@@ -1,3 +1,0 @@
-tch-rs
-canvas-task-extension
-TTS
