@@ -18,12 +18,6 @@
 
 <h3 align="left">Connect with me:</h3>
 <div align="left">
-  <a href="https://www.youtube.com/@vert4836" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Youtube&logo=youtube&label=&color=FF0000&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="youtube logo"  />
-  </a>
-  <a href="https://www.instagram.com/dc.darin/" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Instagram&logo=instagram&label=&color=E4405F&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="instagram logo"  />
-  </a>
   <a href="mailto:darinchauyf@gmail.com" target="_blank">
     <img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="gmail logo"  />
   </a>
@@ -36,12 +30,11 @@
 
 <div align="center">
   <img src="https://streak-stats.demolab.com?user=darinchau&locale=en&mode=weekly&theme=dark&hide_border=false&border_radius=5" height="150" alt="streak graph"  />
-  <img
-        class="embed"
-        alt="GitHub Stats: Top Languages"
-        height="150" 
-        src="https://github-stats-extended.vercel.app/api/top-langs?username=darinchau&layout=compact&langs_count=6&theme=dark&hide=Jupyter%20Notebook&role=OWNER,ORGANIZATION_MEMBER,COLLABORATOR"
-      />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://git-stats-animation-production.up.railway.app/languages-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://git-stats-animation-production.up.railway.app/languages-light.svg">
+    <img alt="Activity" src="https://git-stats-animation-production.up.railway.app/languages.svg">
+  </picture>
 </div>
 
 ###
